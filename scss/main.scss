@@ -104,6 +104,15 @@ a {
   }
 }
 
+.hint {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 100px;
+  transition: 0.3s;
+}
+
 .card:hover {
   transform: scale(1);
   filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.1));
@@ -112,5 +121,8 @@ a {
   }
   .back {
     transform: rotateY(-180deg);
+  }
+  + .hint {
+    opacity: 0;
   }
 }

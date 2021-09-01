@@ -193,6 +193,17 @@ a {
   z-index: -1;
 }
 
+.hint {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 100px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .card:hover {
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -208,5 +219,9 @@ a {
 .card:hover .back {
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
+}
+
+.card:hover + .hint {
+  opacity: 0;
 }
 /*# sourceMappingURL=main.css.map */
