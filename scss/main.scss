@@ -24,3 +24,43 @@ img {
   background: white;
   overflow: hidden;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.front {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 40px;
+  }
+  &__name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  &__title {
+    font-weight: 700;
+  }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    > * {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+  &__gradient {
+    width: 100%;
+    height: 33%;
+  }
+}
