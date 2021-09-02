@@ -133,6 +133,17 @@ a {
   border-radius: 100px;
   transition: 0.3s;
   animation: fadeIn 1s 0.5s backwards;
+  &--desktop {
+    display: none;
+  }
+  @media screen and (min-width: 600px) {
+    &--desktop {
+      display: block;
+    }
+    &--mobile {
+      display: none;
+    }
+  }
 }
 
 .card:hover {
@@ -144,7 +155,7 @@ a {
   .back {
     transform: rotateY(-180deg);
   }
-  + .hint {
+  ~ .hint {
     opacity: 0;
   }
 }

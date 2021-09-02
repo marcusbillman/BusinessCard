@@ -226,6 +226,19 @@ a:hover::after {
           animation: fadeIn 1s 0.5s backwards;
 }
 
+.hint--desktop {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .hint--desktop {
+    display: block;
+  }
+  .hint--mobile {
+    display: none;
+  }
+}
+
 .card:hover {
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -243,7 +256,7 @@ a:hover::after {
           transform: rotateY(-180deg);
 }
 
-.card:hover + .hint {
+.card:hover ~ .hint {
   opacity: 0;
 }
 
