@@ -8,6 +8,7 @@ body {
   background: #F2F5F9;
   padding: 0;
   margin: 0;
+  perspective: 1000px;
 }
 
 img {
@@ -25,6 +26,7 @@ img {
   transform: scale(0.7);
   transition: 0.7s cubic-bezier(0.2, 0, 0.13, 1);
   perspective: 1000px;
+  animation: cardAppear 1s;
 }
 
 a {
@@ -134,6 +136,7 @@ a {
   transform: translateX(-50%);
   border-radius: 100px;
   transition: 0.3s;
+  animation: fadeIn 1s 0.5s backwards;
 }
 
 .card:hover {
@@ -146,6 +149,19 @@ a {
     transform: rotateY(-180deg);
   }
   + .hint {
+    opacity: 0;
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    transform: scale(0) rotate(-10deg) rotateX(60deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
 }
