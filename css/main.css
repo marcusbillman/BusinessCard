@@ -215,7 +215,7 @@ a:hover::after {
 
 .hint {
   position: absolute;
-  bottom: 15%;
+  bottom: 10%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
