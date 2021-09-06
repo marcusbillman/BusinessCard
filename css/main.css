@@ -219,6 +219,7 @@ a:hover::after {
   position: relative;
   font-size: 24px;
   font-weight: 700;
+  letter-spacing: 2px;
   z-index: 0;
 }
 
