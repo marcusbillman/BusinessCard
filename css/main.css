@@ -67,14 +67,34 @@ body {
   max-width: 340px;
   max-height: 100%;
   aspect-ratio: 55 / 85;
-  -webkit-transform: scale(0.7);
-          transform: scale(0.7);
   -webkit-transition: 0.7s cubic-bezier(0.2, 0, 0.13, 1);
   transition: 0.7s cubic-bezier(0.2, 0, 0.13, 1);
   -webkit-perspective: 1000px;
           perspective: 1000px;
   -webkit-animation: cardAppear 1s;
           animation: cardAppear 1s;
+  -webkit-filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.1));
+}
+
+@media screen and (min-width: 600px) {
+  .card:not(:hover) {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    -webkit-filter: none;
+            filter: none;
+  }
+  .card:not(:hover) .front {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  .card:not(:hover) .back {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  .card:not(:hover) ~ .hint {
+    opacity: 1;
+  }
 }
 
 a {
@@ -83,6 +103,7 @@ a {
   color: inherit;
   text-decoration: none;
   line-height: 1.4;
+  z-index: 0;
 }
 
 a::after {
@@ -137,8 +158,6 @@ a:hover::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
 }
 
 .front__main {
@@ -192,6 +211,8 @@ a:hover::after {
   place-items: center;
   background-image: url("../img/mesh-gradient.png");
   background-size: cover;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
 }
 
 .back__greeting {
@@ -220,44 +241,11 @@ a:hover::after {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   border-radius: 100px;
+  opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   -webkit-animation: fadeIn 1s 0.5s backwards;
           animation: fadeIn 1s 0.5s backwards;
-}
-
-.hint--desktop {
-  display: none;
-}
-
-@media screen and (min-width: 600px) {
-  .hint--desktop {
-    display: block;
-  }
-  .hint--mobile {
-    display: none;
-  }
-}
-
-.card:hover {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.1));
-          filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.1));
-}
-
-.card:hover .front {
-  -webkit-transform: rotateY(0);
-          transform: rotateY(0);
-}
-
-.card:hover .back {
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
-}
-
-.card:hover ~ .hint {
-  opacity: 0;
 }
 
 @-webkit-keyframes cardAppear {
